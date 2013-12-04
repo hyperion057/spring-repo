@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="testId" class="com.spring.testmessage.ClassOne">
+		<property name="message" value="Test Message ONE" />
+	</bean>
+
+	<bean id="testId2" class="com.spring.beanscope.ClassOne" scope="prototype">
+	</bean>
+	<!--
+		<bean id="testId2" class="com.spring.beanscope.ClassOne"
+		scope="singleton"> </bean>
+	-->
+
+	<bean id="testId3" class="com.spring.beanlifecycle.ClassOne"
+		init-method="init" destroy-method="destroy">
+		<property name="message" value="Hello World!" />
+
+	</bean>
+
+</beans>
